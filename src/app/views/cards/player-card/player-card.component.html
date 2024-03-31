@@ -1,0 +1,21 @@
+@if (player) {
+  <div
+    class="player-card"
+    draggable="true"
+    #drag
+    [id]="player.id"
+    (dragstart)="onDragStart(player)"
+    (dragend)="onDragEnd()"
+  >
+    <div class="player-info">
+      <div class="avatar">
+        <img [src]="player.avatar" [alt]="player.lastName" />
+        <div class="number">{{ player.number }}</div>
+      </div>
+      <div class="name">
+        <span class="first-name"> {{ player.name }}</span>
+        <span class="last-name"> {{ player.lastName }}</span>
+      </div>
+    </div>
+  </div>
+}

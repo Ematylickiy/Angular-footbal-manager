@@ -1,0 +1,20 @@
+@use "../../../assets/styles/mixins" as mixins;
+@use "../../../assets/styles/variables" as variables;
+
+.wrapper-content {
+  @include mixins.df-center-column;
+
+  .content {
+    @include mixins.df-row;
+
+    flex: 1;
+    gap: 60px;
+    margin-block-start: 20px;
+    margin-block-end: 20px;
+
+    @media screen and (width <= 1160px) {
+      flex-direction: column;
+      inline-size: 95%;
+    }
+  }
+}

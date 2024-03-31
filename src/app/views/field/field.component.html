@@ -1,0 +1,52 @@
+@if (activeTacticalSchema()) {
+  <div class="dropzone field">
+    @for (line of activeTacticalSchema()!.fieldPositions; track $index) {
+      <div class="line">
+        @for (fieldPosition of line; track $index) {
+          <div
+            class="position"
+            [ngClass]="{
+              block:
+                (draggblePlayer$ | async) &&
+                fieldPosition.position !== (draggblePlayer$ | async)?.position
+            }"
+            (dragover)="$event.preventDefault()"
+            (drop)="onFieldDrop(fieldPosition)"
+          >
+            @if (fieldPosition.id | findPlayer | async; as player) {
+              <button
+                class="close-btn"
+                mat-icon-button
+                (click)="clearPosition(player.id)"
+              >
+                <mat-icon>close</mat-icon>
+              </button>
+              <app-player-card
+                class="on-field-position"
+                [player]="player"
+              ></app-player-card>
+            }
+          </div>
+        }
+      </div>
+    }
+  </div>
+}
+
+<div class="schemas">
+  @for (schema of schemas; track $index) {
+    <button
+      class="field schema"
+      [ngClass]="{ active: schema.id === activeTacticalSchema()!.id }"
+      (click)="updateActiveSchema(schema)"
+    >
+      @for (line of schema.fieldPositions; track $index) {
+        <div class="line">
+          @for (fieldPosition of line; track $index) {
+            <div class="position"></div>
+          }
+        </div>
+      }
+    </button>
+  }
+</div>

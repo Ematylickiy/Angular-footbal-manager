@@ -1,0 +1,51 @@
+@use "../../../assets/styles/mixins" as mixins;
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  margin-block-end: 30px;
+}
+
+.team {
+  min-inline-size: 445px;
+  max-block-size: 693px;
+  padding-inline-end: 0;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    visibility: hidden;
+  }
+
+  &:hover {
+    @include mixins.custom-scroll;
+  }
+
+  mat-expansion-panel-header {
+    inline-size: 424px;
+
+    @media screen and (width <= 1160px) {
+      inline-size: auto;
+    }
+  }
+
+  .panel-header {
+    font-size: 18px;
+  }
+
+  .players-cards {
+    inline-size: 424px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+
+    &.disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    @media screen and (width <= 1160px) {
+      display: flex;
+      inline-size: fit-content;
+    }
+  }
+}

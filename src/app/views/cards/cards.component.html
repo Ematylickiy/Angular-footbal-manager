@@ -1,0 +1,37 @@
+<div class="buttons">
+  <button (click)="autoFill()" mat-flat-button>Autofill lineup</button>
+  <button (click)="reset()" mat-stroked-button>Reset lineup</button>
+</div>
+
+<div class="team">
+  <mat-accordion multi>
+    @for (
+      sortedPlayers of freePlayers$ | async | sortByPosition;
+      track $index
+    ) {
+      <mat-expansion-panel [expanded]="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <div class="panel-header">{{ sortedPlayers.position }}</div>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div
+          class="players-cards"
+          (dragover)="$event.preventDefault()"
+          (drop)="onPlayerDrop()"
+          [ngClass]="{
+            disabled:
+              (draggblePlayer$ | async)?.fieldPositionId &&
+              sortedPlayers.players[0].position !==
+                (draggblePlayer$ | async)?.position
+          }"
+        >
+          @for (player of sortedPlayers.players; track $index) {
+            <app-player-card [player]="player"></app-player-card>
+          }
+        </div>
+      </mat-expansion-panel>
+    }
+  </mat-accordion>
+</div>

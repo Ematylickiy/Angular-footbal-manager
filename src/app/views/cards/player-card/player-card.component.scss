@@ -1,0 +1,91 @@
+@use "../../../../assets/styles/mixins" as mixins;
+@use "../../../../assets/styles/variables" as variables;
+
+:host.on-field-position {
+  .player-card {
+    border: none;
+    block-size: auto;
+    inline-size: auto;
+    padding-block-start: 0;
+
+    .avatar {
+      inline-size: 60px;
+      block-size: auto;
+
+      img {
+        border-radius: 100%;
+      }
+
+      .number {
+        inset-block-start: 35px;
+      }
+    }
+
+    .name {
+      color: variables.$color-last-name-on-field-position;
+
+      font-size: 13px;
+      letter-spacing: 0;
+
+      .first-name {
+        display: none;
+      }
+    }
+  }
+}
+
+.player-card {
+  @include mixins.df-column;
+
+  align-items: center;
+  block-size: 100px;
+  inline-size: 100px;
+  padding-block-start: 5px;
+  border: 1px solid variables.$border-card;
+  border-radius: 5px;
+
+  .player-info {
+    @include mixins.df-column;
+
+    position: relative;
+    align-items: center;
+    gap: 3px;
+  }
+
+  .avatar {
+    position: relative;
+    block-size: 68px;
+    inline-size: 68px;
+    border-radius: 5px;
+
+    img {
+      pointer-events: none;
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    .number {
+      @include mixins.df-center-column;
+
+      position: absolute;
+      inset-inline-end: -10px;
+      inset-block-start: 3px;
+      inline-size: 23px;
+      block-size: 25px;
+      background: url("../../../../assets/images/player-number.png") no-repeat;
+      background-size: contain;
+      font-size: 12px;
+    }
+  }
+
+  .name {
+    font-size: 12px;
+    letter-spacing: -0.5px;
+    line-height: 0.8;
+    text-align: center;
+
+    .last-name {
+      white-space: nowrap;
+    }
+  }
+}
