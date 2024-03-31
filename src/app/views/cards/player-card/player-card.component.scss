@@ -26,9 +26,14 @@
 
       font-size: 13px;
       letter-spacing: 0;
+      line-height: 1;
 
       .first-name {
         display: none;
+      }
+
+      .last-name {
+        white-space: normal;
       }
     }
   }

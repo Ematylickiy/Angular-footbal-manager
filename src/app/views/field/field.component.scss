@@ -55,13 +55,13 @@
 
     &.block {
       pointer-events: none;
-      background-color: variables.$bg-disabled-field-position;
+      opacity: 0.5;
     }
 
     .close-btn {
       position: absolute;
       inset-block-start: -9px;
-      inset-inline-end: -16px;
+      inset-inline-end: -13px;
       width: auto;
       height: auto;
       padding: 0;
