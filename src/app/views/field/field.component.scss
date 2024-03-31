@@ -62,9 +62,10 @@
       position: absolute;
       inset-block-start: -9px;
       inset-inline-end: -16px;
-      padding: 0;
       width: auto;
       height: auto;
+      padding: 0;
+      z-index: 1;
 
       mat-icon {
         color: white;
