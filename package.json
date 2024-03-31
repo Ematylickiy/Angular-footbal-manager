@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "deploy-ghpage": "ng deploy --base-href=/liverpool-manager/"
+    "deploy-ghpage": "ng deploy --base-href=/liverpool-manager/",
+    "prepare": "husky"
   },
   "private": true,
   "dependencies": {
@@ -41,6 +42,7 @@
     "angular-cli-ghpages": "^2.0.0-beta.2",
     "eslint": "^8.57.0",
     "eslint-config-airbnb": "^19.0.4",
+    "husky": "^9.0.11",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
