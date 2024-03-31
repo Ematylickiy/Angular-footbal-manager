@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "deploy-ghpage": "ng deploy --base-href=/liverpool-manager/",
+    "deploy-ghpage": "ng deploy --base-href=/Angular-footbal-manager/",
     "prepare": "husky"
   },
   "private": true,
