@@ -1,6 +1,6 @@
 @use "./variables" as variables;
 
-// #ACCORDION
+//#ACCORDION
 mat-expansion-panel.mat-expansion-panel:not([class*="mat-elevation-z"]) {
   --mat-expansion-header-expanded-state-height: 48px;
 
@@ -24,7 +24,7 @@ mat-expansion-panel.mat-expansion-panel:not([class*="mat-elevation-z"]) {
   }
 }
 
-// #BUTTONS
+//#BUTTONS
 button[mat-flat-button],
 button[mat-stroked-button] {
   border-radius: 300px;
