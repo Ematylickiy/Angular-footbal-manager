@@ -20,8 +20,6 @@ export class DragServiceService {
     this._draggblePlayerSubj$.next(value);
   }
 
-  constructor() {}
-
   clearDraggblePlayer(): void {
     this._draggblePlayerSubj$.next(null);
   }

@@ -5,6 +5,13 @@ export enum PlayerPosition {
   Forward = 'forward',
 }
 
+export enum PlayerPositionsView {
+  Goalkeepers = 'Goalkeepers',
+  Defenders = 'Defenders',
+  Midfielders = 'Midfielders',
+  Forwards = 'Forwards',
+}
+
 export interface PlayerSchema {
   [key: string]: number;
 }

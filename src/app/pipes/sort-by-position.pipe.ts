@@ -1,6 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { Player } from '../models/player.model';
-import { PlayerPosition } from '../models/player-position.enum';
+import {
+  PlayerPosition,
+  PlayerPositionsView,
+} from '../models/player-position.enum';
 
 @Pipe({
   name: 'sortByPosition',
@@ -35,13 +38,13 @@ export class SortByPositionPipe implements PipeTransform {
   private getPositionView(position: PlayerPosition): string {
     switch (position) {
       case PlayerPosition.Defender:
-        return 'Defenders';
+        return PlayerPositionsView.Defenders;
       case PlayerPosition.Midfielder:
-        return 'Midfielders';
+        return PlayerPositionsView.Midfielders;
       case PlayerPosition.Forward:
-        return 'Forwards';
+        return PlayerPositionsView.Forwards;
       case PlayerPosition.Goalkeeper:
-        return 'Goalkeepers';
+        return PlayerPositionsView.Goalkeepers;
       default:
         return '';
     }

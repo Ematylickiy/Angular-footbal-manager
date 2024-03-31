@@ -12,10 +12,8 @@ export class FindPlayerPipe implements PipeTransform {
   transform(fieldPositionId: number): Observable<Player | undefined> {
     return this.teamService.team$.pipe(
       map((team) =>
-        team.find((player) => player.fieldPositionId === fieldPositionId)
-      )
+        team.find((player) => player.fieldPositionId === fieldPositionId),
+      ),
     );
-
-    // return Team.find(({ id }) => id === playerId)!;
   }
 }
