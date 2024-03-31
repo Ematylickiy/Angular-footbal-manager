@@ -1,0 +1,45 @@
+@use "./variables" as variables;
+
+// #ACCORDION
+mat-expansion-panel.mat-expansion-panel:not([class*="mat-elevation-z"]) {
+  --mat-expansion-header-expanded-state-height: 48px;
+
+  box-shadow: none;
+  margin: 0;
+
+  mat-expansion-panel-header {
+    padding: 0;
+    padding-inline-end: 16px;
+    border-radius: 0;
+    border-bottom: 1px solid #ddddddac;
+
+    &:not(.mat-expanded) {
+      border-bottom: 1px solid #ed4331;
+    }
+  }
+
+  .mat-expansion-panel-body {
+    padding: 0;
+    padding-block-start: 8px;
+  }
+}
+
+// #BUTTONS
+button[mat-flat-button],
+button[mat-stroked-button] {
+  border-radius: 300px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+button[mat-flat-button] {
+  --mdc-filled-button-label-text-color: #{variables.$color-flat-button};
+  --mdc-filled-button-container-color: #{variables.$bg-flat-button};
+}
+
+button[mat-stroked-button] {
+  --mdc-outlined-button-outline-color: #{variables.$border-stroked-button};
+  --mdc-outlined-button-label-text-color: #{variables.$color-stroked-button};
+
+  border-width: 2px;
+}
